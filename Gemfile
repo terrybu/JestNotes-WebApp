@@ -5,6 +5,9 @@ gem 'parse_resource', :git => 'git@github.com:adelevie/parse_resource.git'
 gem 'activeresource'
 gem 'figaro'
 
+group :development do
+  gem 'guard-rails'
+end
 
 
 #rails generic gems below
