@@ -27,3 +27,8 @@ config/secrets.yml
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+# Ignore application configuration
+/config/application.yml
+/config/parse_resource.yml
+
+.idea/

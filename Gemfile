@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+#terry's app-specific gems
+gem 'parse_resource', :git => 'git@github.com:adelevie/parse_resource.git'
+gem 'activeresource'
+gem 'figaro'
+
+
+
+#rails generic gems below
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
