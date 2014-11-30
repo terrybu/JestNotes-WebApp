@@ -1,0 +1,16 @@
+LOgs will be very important for you to REMEMBER the quick and easy solutions you are using. Because once you face a problem or have to re-do it, and you forget, you are SOL.
+Keep close logs here. 
+
+
+***Remember this while trying to create new attributes to send to parse.com 
+*it seems that if you try to send a params hash with mass assignment and you don't have strong params setting set exactly right, it will silently fail, not sending anything to Parse.com
+
+
+*****************
+MAKE SURE YOU DO THIS TO GET "SCORE" number attribute working
+In your jokes_controller create action
+@joke.score = joke_params[:score].to_i
+
+P.S. I had params[:score] in here for the longest time, and it wouldn't work.
+
+

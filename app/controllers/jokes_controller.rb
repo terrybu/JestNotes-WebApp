@@ -26,13 +26,11 @@ class JokesController < ApplicationController
   # POST /jokes.json
   def create
     @joke = Joke.new(joke_params)
-    # @joke.score = joke_params[:score].to_i
+    @joke.user_id ||= session[:user_id] if session[:user_id]
+    @joke.score = joke_params[:score].to_i
 
-    @user_id ||= session[:user_id] if session[:user_id]
-    @joke.user_id = @user_id
     respond_to do |format|
-      if @joke.valid?
-        @joke.save
+      if @joke.save
         format.html { redirect_to @joke, notice: 'Joke was successfully created.' }
         format.json { render :show, status: :created, location: @joke }
       else
@@ -74,7 +72,7 @@ class JokesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joke_params
-      params.require(:joke).permit(:name, :bodyText, :score, :user_id)
+      params.require(:joke).permit(:name, :bodyText, :score, :user_id, :write_date)
     end
 
 end

@@ -1,0 +1,5 @@
+<!--   <p>  
+    <%= f.label :length %><br />  
+    <%= f.text_field :minutes_length %> <%= f.label :minutes %>
+    <%= f.text_field :seconds_length %> <%= f.label :seconds %>
+  </p>   -->

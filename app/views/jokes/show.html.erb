@@ -1,4 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Joke Name</th>
+      <th>Joke Body</th>
+      <th>Length</th>
+      <th>Score</th>
+      <th>Date Created At</th>
+      <th>Date Updated At</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+        <td><%= @joke.name %></td>
+        <td><%= @joke.bodyText %></td>
+        <td>some length</td>
+        <td><%= @joke.score %>/10</td>
+        <td><%= timeConverter(@joke.created_at) %></td>
+        <td><%= timeConverter(@joke.updated_at) %></td> 
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
 <%= link_to 'Edit', edit_joke_path(@joke) %> |
 <%= link_to 'Back', jokes_path %>

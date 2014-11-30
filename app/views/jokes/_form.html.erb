@@ -12,7 +12,7 @@
   <% end %>
   <p>  
     <%= f.label :name %><br />  
-    <%= f.text_field :name %>  
+    <%= f.text_field :name, class: "form-control" %>  
   </p>  
   <p>  
     <%= f.label :text %><br />  
@@ -20,13 +20,9 @@
   </p>  
   <p>  
     <%= f.label :score %><br />  
-    <%= f.text_field :score %>  
+    <%= f.text_field :score %> out of 10 
   </p>  
-  <p>  
-    <%= f.label :length %><br />  
-    <%= f.text_field :minutes_length %> <%= f.label :minutes %>
-    <%= f.text_field :seconds_length %> <%= f.label :seconds %>
-  </p>  
+
   <p>  
     <%= f.label "Written On" %><br />  
     <%= f.date_field(:write_date) %>
