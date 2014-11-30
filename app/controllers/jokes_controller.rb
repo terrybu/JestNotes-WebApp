@@ -26,7 +26,7 @@ class JokesController < ApplicationController
   # POST /jokes.json
   def create
     @joke = Joke.new(joke_params)
-    @joke.score = joke_params[:score].to_i
+    # @joke.score = joke_params[:score].to_i
 
     @user_id ||= session[:user_id] if session[:user_id]
     @joke.user_id = @user_id

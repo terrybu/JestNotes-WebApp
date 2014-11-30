@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-a.btn {
-	&:visited {
-    	color: #FFF;
-  	}
+a.btn.terrynav {
+	background-color: gray;
+	color: white;
+	&:hover {
+		background-color: black;
+	}
 }
+
+.terryArea {
+	min-height: 200px;
+}
+

@@ -16,13 +16,24 @@
   </p>  
   <p>  
     <%= f.label :text %><br />  
-    <%= f.text_field :bodyText %>  
+    <%= f.text_area :bodyText, class: "form-control terryArea" %>  
   </p>  
   <p>  
     <%= f.label :score %><br />  
     <%= f.text_field :score %>  
   </p>  
+  <p>  
+    <%= f.label :length %><br />  
+    <%= f.text_field :minutes_length %> <%= f.label :minutes %>
+    <%= f.text_field :seconds_length %> <%= f.label :seconds %>
+  </p>  
+  <p>  
+    <%= f.label "Written On" %><br />  
+    <%= f.date_field(:write_date) %>
+  </p>  
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Joke", class: "btn btn-primary" %>
   </div>
+
 <% end %>
