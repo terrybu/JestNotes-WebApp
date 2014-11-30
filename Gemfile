@@ -6,8 +6,18 @@ gem 'activeresource'
 gem 'figaro'
 
 group :development do
+  gem 'guard'
   gem 'guard-rails'
 end
+
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
+gem "twitter-bootstrap-rails"
+gem 'bootstrap-rails-helpers'
+
+
+gem 'email_validator'
+gem 'bcrypt-ruby'
 
 
 #rails generic gems below

@@ -8,5 +8,6 @@
 guard 'rails' do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
+  watch(%r{^(app)/.*})
 end
 
