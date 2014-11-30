@@ -19,7 +19,6 @@ gem 'bootstrap-rails-helpers'
 gem 'email_validator'
 gem 'bcrypt-ruby'
 
-
 #rails generic gems below
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

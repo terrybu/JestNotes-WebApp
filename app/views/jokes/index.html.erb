@@ -19,7 +19,7 @@
         <td><%= joke.name %></td>
         <td><%= joke.bodyText %></td>
         <td>some length</td>
-        <td>some score</td>
+        <td><%= joke.score %>/10</td>
         <td><%= timeConverter(joke.created_at) %></td>
         <td><%= timeConverter(joke.updated_at) %></td> 
         <td><%= link_to 'Show', joke %>
@@ -30,6 +30,5 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Joke', new_joke_path %>
+<%= link_to 'New Joke', new_joke_path, class: "btn btn-primary btn-lg" %>
