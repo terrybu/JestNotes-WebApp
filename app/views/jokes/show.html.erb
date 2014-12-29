@@ -1,34 +1,48 @@
 <!-- <p id="notice"><%= notice %></p> redundant because I already did bootstrap flash for layout
  --> 
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Joke Name</th>
-      <th>Joke Body</th>
-      <th>Length</th>
-      <th>Score</th>
-      <th>Joke Write Date</th>
-      <th>Date Created At</th>
-      <th>Date Updated At</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr>
-        <td><%= @joke.name %></td>
-        <td><%= @joke.bodyText %></td>
-        <td><%= lengthConverter(@joke.length) %> </td>
-        <td><%= @joke.score %>/10</td>
-        <td><%= @joke.write_date %></td>
-        <td><%= timeConverter(@joke.created_at) %></td>
-        <td><%= timeConverter(@joke.updated_at) %></td> 
-    </tr>
-  </tbody>
-</table>
+ <% @page_title = @joke.name %>
 
 
+<div class="form-actions">
 
+<%= link_to 'Edit', edit_joke_path(@joke), :class => 'btn btn-success'  %> |
+<%= link_to 'Back', jokes_path, :class => 'btn btn-primary' %>
 
+</div>
 
-<%= link_to 'Edit', edit_joke_path(@joke) %> |
-<%= link_to 'Back', jokes_path %>
+<div class="showInterface">
+
+  <dl class="dl-horizontal">
+    
+    <dt><strong><span class="jokeName"><%= @joke.name %></span></strong></dt>
+    <dd><!--placeholder --></dd>
+
+    <dt><strong>Body</strong></dt>
+    <dd>
+    <pre>
+    <%= @joke.bodyText %>
+    </pre>
+    </dd>
+    <div class="relevantInfo">
+    <dt><strong>Length</strong></dt>
+    <dd><%= lengthConverter(@joke.length) %></dd>
+    
+    <dt><strong>Score</strong></dt>
+    <dd><%= @joke.score %> out of 10</dd>
+    
+    <dt><strong>Write Date</strong></dt>
+    <dd><%= writeTimeConverter(@joke.writeDate) %></dd>
+    
+    <dd>  ******************************************************************************************************</dd>
+
+    </div>
+    
+    <dt><strong>Created</strong></dt>
+    <dd><%= timeConverter(@joke.created_at) %></dd>
+      <dt><strong>Updated</strong></dt>
+    <dd><%= timeConverter(@joke.updated_at) %></dd>
+
+  </dl>
+
+</div>

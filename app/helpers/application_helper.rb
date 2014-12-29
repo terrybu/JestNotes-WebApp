@@ -5,5 +5,9 @@ def timeConverter(utcTimeStamp)
 	return time.strftime('%b %d %Y at %I:%M %p UTC')
 end
 
+def writeTimeConverter(date)
+	return date.strftime('%Y-%m-%d')
+end
+
 end
 

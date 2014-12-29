@@ -27,16 +27,16 @@
 
   <p>  
     <%= f.label :score %><br />  
-    <%= f.text_field :score %> out of 10 
+    <%= f.number_field :score, min:0, max:10 %> out of 10 
   </p>  
 
   <p>  
     <%= f.label "Joke Write Date" %><br />  
-    <%= f.date_field(:write_date) %>
+    <%= f.date_field(:writeDate) %>
   </p>  
 
   <div class="actions">
-    <%= f.submit "Create Joke", class: "btn btn-primary" %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 
 <% end %>

@@ -1,11 +1,12 @@
 class JokesController < ApplicationController
   before_action :set_joke, only: [:show, :edit, :update, :destroy]
-
+    
   # GET /jokes
   # GET /jokes.json
   def index
     @user_id ||= session[:user_id] if session[:user_id]
     @jokes = Joke.where(:user_id => @user_id)
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]   
   end
 
   # GET /jokes/1
@@ -20,6 +21,9 @@ class JokesController < ApplicationController
 
   # GET /jokes/1/edit
   def edit
+    @joke = Joke.find(params[:id])
+    @joke.minutes = @joke.length / 60
+    @joke.seconds = @joke.length % 60
   end
 
   # POST /jokes
@@ -44,8 +48,14 @@ class JokesController < ApplicationController
   # PATCH/PUT /jokes/1
   # PATCH/PUT /jokes/1.json
   def update
+    @joke = Joke.find(params[:id])
+    @joke.name = joke_params[:name]
+    @joke.bodyText = joke_params[:bodyText]
+    @joke.score = joke_params[:score].to_i
+    @joke.length = joke_params[:minutes].to_i * 60 + joke_params[:seconds].to_i
+    @joke.writeDate = Date.strptime(joke_params[:writeDate], "%Y-%m-%d") 
     respond_to do |format|
-      if @joke.update(joke_params)
+      if @joke.update
         format.html { redirect_to @joke, notice: 'Joke was successfully updated.' }
         format.json { render :show, status: :ok, location: @joke }
       else
@@ -73,7 +83,7 @@ class JokesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joke_params
-      params.require(:joke).permit(:name, :bodyText, :length, :score, :user_id, :write_date, :minutes, :seconds)
+      params.require(:joke).permit(:name, :bodyText, :length, :score, :user_id, :writeDate, :minutes, :seconds)
     end
 
 end

@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.table {
+	thead tr {
+		background-color: black;
+		color: white;
+	}
+}
+
 a.btn.terrynav {
 	background-color: gray;
 	color: white;
@@ -12,4 +19,24 @@ a.btn.terrynav {
 
 .terryArea {
 	min-height: 200px;
+}
+
+div.showInterface {
+	margin-top: 15px;
+	dt, dd {
+		padding-top: 20px;
+	}
+	pre {
+		max-width: 75%;
+		font-size: 2em;
+	}
+}
+
+.jokeName {
+	font-size: 3em;
+	text-decoration: underline;
+}
+
+div.relevantInfo {
+	font-size: 1.5em;
 }

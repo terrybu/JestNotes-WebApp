@@ -6,6 +6,9 @@ JestNotesWebApp::Application.routes.draw do
   get "logout" => "sessions#destroy", :as => "logout"   
   get "sign_up" => "users#new", :as => "sign_up"  
 
+  #static pages routes
+  get 'about' => 'static#about', :as => :about
+
   resources :users  
   resources :sessions 
   

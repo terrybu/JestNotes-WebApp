@@ -6,8 +6,30 @@
  *= require_tree . 
 */
 @import "bootstrap-sprockets";
-$navbar-default-bg: #312312;
 $light-orange: #ff8c00;
 $navbar-default-color: $light-orange;
 @import "bootstrap";
 @import "bootstrap/theme";
+
+ul.nav li a {
+	font-size: 1.5em;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+span.brand {
+	padding-top: 5px;
+	text-shadow: none;
+ 	font-family: cursive;
+ 	font-size: 2em;
+}
+
+pre.about {
+	font-size: 1.5em;
+}
+
+pre.instructions {
+	font-size: 1.75em;
+}
