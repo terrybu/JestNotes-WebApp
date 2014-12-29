@@ -23,10 +23,12 @@
     <%= f.password_field :password, class: "form-control" %>  
   </p>  
   </div>
-<!--   <p>  
-    <%= f.label :password_confirmation %>  
-    <%= f.password_field :password_confirmation %>  
-  </p>   -->
+  <div class="form-group">
+  <p>  
+    <%= f.label :email %><br />  
+    <%= f.text_field :email, class: "form-control" %>  
+  </p>  
+  </div>
 
   <%= f.submit 'Sign Up', class: "btn btn-primary" %>
 

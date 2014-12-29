@@ -4,8 +4,8 @@ class JokesController < ApplicationController
   # GET /jokes
   # GET /jokes.json
   def index
-    @jokes = Joke.all
     @user_id ||= session[:user_id] if session[:user_id]
+    @jokes = Joke.where(:user_id => @user_id)
   end
 
   # GET /jokes/1
@@ -25,9 +25,10 @@ class JokesController < ApplicationController
   # POST /jokes
   # POST /jokes.json
   def create
-    @joke = Joke.new(joke_params)
+    @joke = Joke.new(joke_params.except(:minutes, :seconds))
     @joke.user_id ||= session[:user_id] if session[:user_id]
     @joke.score = joke_params[:score].to_i
+    @joke.length = joke_params[:minutes].to_i * 60 + joke_params[:seconds].to_i
 
     respond_to do |format|
       if @joke.save
@@ -72,7 +73,7 @@ class JokesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def joke_params
-      params.require(:joke).permit(:name, :bodyText, :score, :user_id, :write_date)
+      params.require(:joke).permit(:name, :bodyText, :length, :score, :user_id, :write_date, :minutes, :seconds)
     end
 
 end

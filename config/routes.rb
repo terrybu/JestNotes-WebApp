@@ -1,6 +1,6 @@
 JestNotesWebApp::Application.routes.draw do
   resources :jokes
-  root :to => "users#new"  
+  root :to => "sessions#new"  
 
   get "login" => "sessions#new", :as => "login"  
   get "logout" => "sessions#destroy", :as => "logout"   

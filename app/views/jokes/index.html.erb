@@ -7,6 +7,7 @@
       <th>Joke Body</th>
       <th>Length</th>
       <th>Score</th>
+      <th>Joke Write Date</th>
       <th>Date Created At</th>
       <th>Date Updated At</th>
       <th>Action Options</th>
@@ -18,8 +19,9 @@
     <tr>
         <td><%= joke.name %></td>
         <td><%= joke.bodyText %></td>
-        <td>some length</td>
+        <td><%= lengthConverter(joke.length) %> </td>
         <td><%= joke.score %>/10</td>
+        <td><%= joke.write_date %></td>
         <td><%= timeConverter(joke.created_at) %></td>
         <td><%= timeConverter(joke.updated_at) %></td> 
         <td><%= link_to 'Show', joke %>
