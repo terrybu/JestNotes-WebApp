@@ -33,7 +33,7 @@ class JokesController < ApplicationController
     @joke.user_id ||= session[:user_id] if session[:user_id]
     @joke.score = joke_params[:score].to_i
     @joke.length = joke_params[:minutes].to_i * 60 + joke_params[:seconds].to_i
-
+    @joke.writeDate = Date.strptime(joke_params[:writeDate], "%Y-%m-%d") 
     respond_to do |format|
       if @joke.save
         format.html { redirect_to @joke, notice: 'Joke was successfully created.' }
