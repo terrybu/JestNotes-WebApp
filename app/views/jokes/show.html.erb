@@ -1,23 +1,17 @@
-<!-- <p id="notice"><%= notice %></p> redundant because I already did bootstrap flash for layout
- --> 
-
- <% @page_title = @joke.name %>
+<% @page_title = @joke.name %>
 
 
 <div class="form-actions">
-
-<%= link_to 'Edit', edit_joke_path(@joke), :class => 'btn btn-success'  %> |
-<%= link_to 'Back', jokes_path, :class => 'btn btn-primary' %>
-
+    <%= link_to 'Edit', edit_joke_path(@joke), :class => 'btn btn-success'  %> |
+    <%= link_to 'Back', jokes_path, :class => 'btn btn-primary' %>
 </div>
 
 <div class="showInterface">
 
   <dl class="dl-horizontal">
     
-    <dt><strong><span class="jokeName"><%= @joke.name %></span></strong></dt>
-    <dd><!--placeholder --></dd>
-
+    <dt></dt>
+    <dd><strong><span class="jokeName"><%= @joke.name %></span></strong></dd>
     <dt><strong>Body</strong></dt>
     <dd>
     <pre>
