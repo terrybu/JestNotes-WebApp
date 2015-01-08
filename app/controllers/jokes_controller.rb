@@ -6,7 +6,7 @@ class JokesController < ApplicationController
   def index
     @user_id ||= session[:user_id] if session[:user_id]
     @jokes = Joke.where(:user_id => @user_id)
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]   
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   # GET /jokes/1

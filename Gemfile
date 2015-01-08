@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #terry's app-specific gems
-gem 'parse_resource', :git => 'git@github.com:adelevie/parse_resource.git'
+gem 'parse_resource', github: 'adelevie/parse_resource'
 gem 'activeresource'
 gem 'figaro'
 
