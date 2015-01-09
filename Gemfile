@@ -20,6 +20,11 @@ gem 'bootstrap-rails-helpers'
 gem 'email_validator'
 gem 'bcrypt-ruby'
 
+
+gem 'rails_12factor', group: :production
+
+
+
 #rails generic gems below
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
