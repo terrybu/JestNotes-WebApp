@@ -9,7 +9,7 @@ GIT
       rest-client
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actionmailer (4.1.1)
       actionpack (= 4.1.1)
@@ -199,6 +199,7 @@ GEM
     uglifier (2.6.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    win32console (1.3.2)
     win32console (1.3.2-x86-mingw32)
 
 PLATFORMS

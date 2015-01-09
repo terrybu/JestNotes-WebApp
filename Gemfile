@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
+
 
 #terry's app-specific gems
 gem 'parse_resource', github: 'adelevie/parse_resource'
