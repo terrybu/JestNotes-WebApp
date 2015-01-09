@@ -1,5 +1,5 @@
 class Setrecord < ParseResource::Base
-  fields :name
+  fields :name, :jokes, :createDate, :user
 
   validates_presence_of :name
 
